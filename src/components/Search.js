@@ -1,5 +1,6 @@
 import React from "react";
 import './styles/video.css';
+import { FormBtn } from "../components/FormBtn";
 
 
 class Search extends React.Component {
@@ -26,6 +27,12 @@ class Search extends React.Component {
               placeholder="Enter Search Keyword"
             />
           </div>
+          <FormBtn
+                disabled={this.title}
+                onClick={this.onSubmit}
+              >
+                Submit Book
+              </FormBtn>
         </form>
       </>
     );
