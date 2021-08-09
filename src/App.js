@@ -4,6 +4,10 @@ import './App.css';
 import VideoList from "./components/VideoList";
 import youtubeApi from "./api/youtube";
 import VideoPlayer from "./components/VideoPlayer";
+// import { Container } from "react-bootstrap";
+// import Navbar from "./components/Navbar";
+
+
 
 export default class App extends React.Component {
   state= {
@@ -33,6 +37,7 @@ this.setState({
 render() {
   return (
   <div className="App">
+  {/* <Navbar /> */}
 <Search onSearch={this.onSearch} />
 <VideoList onVideoSelected={this.onVideoSelected} data={this.state.videosMetaInfo} />
 <VideoPlayer videoId={this.state.selectedVideoId} />

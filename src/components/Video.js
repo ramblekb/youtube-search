@@ -1,6 +1,6 @@
 import React from "react";
 import './styles/video.css'
-
+import Container from '@material-ui/core/Container';
 
 function selectVideo(videoIdObj, onVideoSelected) {
   onVideoSelected(videoIdObj.videoId);
@@ -11,7 +11,7 @@ function getCss(imageurl) {
     backgroundImage: `url(${imageurl})`,
     backgroundSize: "cover",
     backgroundPosition: "center center",
-    height: "180px",
+    height:  "120px",
     position: "relative"
   };
 
@@ -21,13 +21,13 @@ function getCss(imageurl) {
 function constructVideoTitles(vidoesData, onVideoSelected) {
   return vidoesData.map(({ snippet, id }, index) => {
     return (
-      <div
+      <Container maxWidth="sm"
         className="video"
         key={index}
         onClick={() => selectVideo(id, onVideoSelected)}>
         <div style={getCss(snippet.thumbnails.high.url)} key={index} />
         <p className="title">{snippet.title}</p>
-      </div>
+      </Container>
     );
   });
 }
